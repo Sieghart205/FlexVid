@@ -1,20 +1,28 @@
-const Jeisson = document.getElementById("jeisson");
-const juli = document.getElementById("juli");
+const Jb = document.getElementById("jeisson");
+const Juli = document.getElementById("juli");
 
-Jeisson.addEventListener("click",()=>{
-    const jf = document.getElementById("jeisson-info");
-    jf.style.display = "flex";
+const inf = document.getElementById("info");
+
+Jb.addEventListener("click",()=>{
+    inf.innerHTML = `
+    <h2>Nombre: Jeisson Benitez Ortega </h2>
+    <br>
+    <h2>Numero de contacto: +573009995465</h2>
+    <br>
+    <h2>Correo: benitezortegajeisson@gmail.com</h2>
+    <br>
+    <h2>Sobre mi: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia, cumque aliquid delectus sapiente reprehenderit, nostrum laudantium beatae dolorem voluptatum atque ab impedit minus fuga repellendus porro maiores est quia similique.
+Odio qui, eum necessitatibus doloribus sequi ipsa optio consequatur repudiandae sed nihil, hic reiciendis, aut adipisci. Voluptatem rerum eius alias cum assumenda animi illo mollitia harum non possimus. At, officiis.</h2>`
 })
 
-juli.addEventListener("click",()=>{
-    const jlf = document.getElementById("juli-info");
-    jlf.style.display = "flex";
-})
-
-const btn_modal = document.querySelectorAll(".btn-modal")
-
-btn_modal.forEach(e=>{
-    e.addEventListener("click",()=>{
-        e.parentElement.parentElement.style.display="none";
-    })
+Juli.addEventListener("click",()=>{
+    inf.innerHTML = `
+    <h2>Nombre: Juliana Padilla Valencia</h2>
+    <br>
+    <h2>Numero de contacto: +57313604925</h2>
+    <br>
+    <h2>Correo: julialalala243@gmail.com</h2>
+    <br>
+    <h2>Sobre mi: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia, cumque aliquid delectus sapiente reprehenderit, nostrum laudantium beatae dolorem voluptatum atque ab impedit minus fuga repellendus porro maiores est quia similique.
+Odio qui, eum necessitatibus doloribus sequi ipsa optio consequatur repudiandae sed nihil, hic reiciendis, aut adipisci. Voluptatem rerum eius alias cum assumenda animi illo mollitia harum non possimus. At, officiis.</h2>`
 })
