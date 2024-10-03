@@ -15,9 +15,7 @@
 
 
 body{
-    background-color: var(--white);
-    width: 100vw;
-    overflow-x: hidden;
+    width: 100%;
     background-color: var(--dark);
 }
 
@@ -94,7 +92,7 @@ body{
 }
 
 header{
-    width: 100vw;
+    width: 100%;
     height: 100px;
     padding: 30px;
     background-color: var(--primary);
@@ -117,7 +115,7 @@ header nav{
 }
 
 .sec-1{
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -130,11 +128,16 @@ header nav{
 .container{
     position: absolute;
     z-index: 150;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .slider{
     display: flex;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     z-index: 100;
 }
@@ -160,7 +163,7 @@ header nav{
 
 .sec-2{
     margin-top: 100px;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     overflow: hidden;
     display: flex;
@@ -178,15 +181,15 @@ header nav{
     z-index: 200;
 }
 
-
-.sec-2 img{
+.img-logo-waos{
     height: 70vh;
     object-fit: cover;
     object-position: right;
+    z-index: 250;
 }
 
 .sec-2 .info{
-    width: 30vw;
+    width: 30%;
     display: flex;
     flex-direction: column;
     gap: 25px;
@@ -200,7 +203,7 @@ header nav{
     background-size: cover;
     background-position: center;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     position: relative;
     z-index: 250;
     display: flex;
@@ -209,12 +212,12 @@ header nav{
 }
 
 .group{
-    width: 70vw;
+    width: 70%;
 }
 
 
 .sec-4{
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     position: absolute;
     background-color: var(--dark);
@@ -227,7 +230,7 @@ header nav{
     align-items: center;
     position: absolute;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
 }
 
 .sec4 .info h3{
@@ -235,7 +238,7 @@ header nav{
 }
 
 .sec-4 .info p{
-    width: 40vw;
+    width: 40%;
     margin-top: 250px;
 }
 
@@ -255,20 +258,13 @@ header nav{
     display: flex;
     justify-self: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
-}
-
-.circle::before{
-    content: "";
     position: absolute;
     background-color: var(--dark);
+    border-radius: 100%;
     width: 90%;
     height: 90%;
-    border-radius: 100%;
-    margin: 0 auto;
-    z-index: 999;
 }
+
 
 .circle:hover{
     scale: 1.1;
@@ -298,7 +294,7 @@ header nav{
     width: 50px;
     height: 50px;
     top: 475px;
-    left: 27vw;
+    left: 27%;
 }
 
 .circle-4{
@@ -316,7 +312,7 @@ header nav{
     width: 150px;
     height: 150px;
     top: -20vh;
-    left: 96vw;
+    left: 96%;
 }
 
 .circle-6{
@@ -324,8 +320,8 @@ header nav{
     height: 75px;
     position: relative;
     background-color: var(--acent);
-    top: -20vw;
-    left: 80vw;
+    top: -20%;
+    left: 80%;
 }
 
 .circle-7{
@@ -360,7 +356,7 @@ header nav{
     position: fixed;
     background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
     z-index: 5000;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: none;
     justify-content: center;
@@ -368,7 +364,7 @@ header nav{
 }
 
 .modal .info{
-    width: 60vw;
+    width: 60%;
     height: 65vh;
     padding: 50px;
     gap: 50px;
@@ -423,11 +419,11 @@ header nav{
 
 .sec-1.v2 .slider{
     height: 50vh;
-    width: 60vw;
+    width: 60%;
 }
 
 .secV2-2{
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -436,7 +432,7 @@ header nav{
 }
 
 .info-person{
-    width: 30vw;
+    width: 30%;
     transition: all .5s ease;
     text-align: left;
     font-family: "poppins";
@@ -632,7 +628,7 @@ a:hover{
 }
 
 .secV2-3{
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-color: var(--white);
     display: flex;
@@ -656,7 +652,7 @@ a:hover{
     padding: 25px;
     border-radius: 25px;
     border: 2px solid rgba(255,255,255,0.3);
-    left: 55vw;
+    left: 55%;
     top: 50vh;
 }
 
@@ -679,6 +675,16 @@ a:hover{
     left:280px;
 }
 
+@media (max-width:1782px){
+    .circle-2{
+        left: -70px;
+    }
+
+    .circle-7{
+        top: -70vw;
+    }
+}
+
 @media (max-width:1674px){
     .title{
         font-size: 61px;
@@ -691,11 +697,23 @@ a:hover{
     .text{
         font-size: 30px;
     }
+
+    .circle-7{
+        top: -80vw;
+    }
 }
 
 @media (max-width:1437px){
     .sec-2 img{
         height: 50vh;
+    }
+
+    .circle-7{
+        top: -90vw;
+    }
+
+    .img-logo-waos{
+        height: 60vh;
     }
 }
 
@@ -720,5 +738,50 @@ a:hover{
 
     .subtitle{
         font-size: 32px;
+    }
+
+    .circle-7{
+        top: -105vw;
+    }
+
+}
+
+@media (max-width:1010px){
+    .title{
+        font-size: 38px;
+    }
+
+    .subtitle{
+        font-size: 27px;
+    }
+
+    .text{
+        font-size: 22px;
+    }
+    
+    .img-logo-waos{
+        height: 50vh;
+    }
+}
+
+@media (max-width:890px){
+    .circle-7{
+        top: -120vw;
+    }
+
+    .title{
+        font-size: 35px;
+    }
+
+    .subtitle{
+        font-size: 24px;
+    }
+
+    .text{
+        font-size: 18px;
+    }
+
+    .sec-4 .info h3{
+        margin-top: 125px;
     }
 }
