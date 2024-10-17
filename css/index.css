@@ -48,14 +48,14 @@ body{
 }
 
 .weight{
-    font-family: "Poppins";
+    font-family: "Poppins",sans-serif;
     font-weight: 600;
     letter-spacing: 1px;
     text-decoration: none;
 }
 
 .text{
-    font-family: "signika negative";
+    font-family: "signika negative",Tahoma;
     text-decoration: none;
 }
 
@@ -212,7 +212,7 @@ header nav{
 }
 
 .group{
-    width: 70%;
+    width: 55%;
 }
 
 
@@ -435,7 +435,7 @@ header nav{
     width: 30%;
     transition: all .5s ease;
     text-align: left;
-    font-family: "poppins";
+    font-family: "poppins",sans-serif;
 }
 
 
@@ -646,6 +646,7 @@ a:hover{
     align-items: center;    
     flex-direction: column;
     width: 600px;
+    height: 317px;
     gap: 50px;
     background-color: rgba(255,255,255,0.3);
     backdrop-filter: blur(50px);
@@ -654,10 +655,51 @@ a:hover{
     border: 2px solid rgba(255,255,255,0.3);
     left: 55%;
     top: 50vh;
+    transition: .5s color ease;
+    overflow: hidden;
+    z-index: 999;
+    cursor: crosshair;
+}
+
+.p-co::after{
+    content: "";
+    position: absolute;
+    background-color: var(--primary);
+    width: 600px;
+    height: 1100px;
+    z-index: 500;
+    left: 900px;
+    filter: blur(50px) opacity(0.5);
+    transition: .5s ease;
+}
+
+.p-co::before{
+    content: "";
+    position: absolute;
+    background-color: var(--secondary);
+    width: 600px;
+    height: 600px;
+    z-index: 500;
+    filter: blur(50px) opacity(0.5);
+    left: -700px;
+    transition: .5s ease;
+}
+
+.p-co:hover::after{
+    left: 300px;
+    transform: rotate(45deg);
+}
+
+.p-co:hover::before{
+    left: -150px;
+}
+
+.p-co:hover{
+    color: #000;
 }
 
 .p-co{
-    font-family: "signika negative";
+    font-family: "signika negative",Tahoma;
 }
 
 .p-i{
@@ -666,13 +708,39 @@ a:hover{
     align-items: center;    
 }
 
-.p-img{
-    position: absolute;
+.cont-p-img{
     aspect-ratio: 3/2;
     width: 900px;
-    object-fit: cover;
-    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
     left:280px;
+    border-radius: 25px;
+    background-color: #0E5555;
+    transition: .2s ease;
+}
+
+.p-img{
+    position: relative;
+    aspect-ratio: 1/1;
+    width: 300px;
+    object-fit: fill;
+    transition: .2s ease;
+    border-radius: 50% 0% 50% 0%;
+    cursor: crosshair;
+}
+
+.cont-p-img:hover .p-img{
+    scale: 1.1;
+}
+
+.bg-none{
+    background-color: #00000000;
+}
+
+.tt, .t-inf{
+    z-index: 3000;
 }
 
 @media (max-width:1782px){
@@ -704,10 +772,6 @@ a:hover{
 }
 
 @media (max-width:1437px){
-    .sec-2 img{
-        height: 50vh;
-    }
-
     .circle-7{
         top: -90vw;
     }
@@ -731,7 +795,7 @@ a:hover{
     }
 }
 
-@media (max-width:1085px){
+@media (max-width:1157px){
     .title{
         font-size: 50px;
     }
@@ -783,5 +847,39 @@ a:hover{
 
     .sec-4 .info h3{
         margin-top: 125px;
+    }
+
+    .img-logo-waos{
+        height: 35vh;
+    }
+}
+
+@media (max-width:767px){
+    .title{
+        font-size: 30px;
+    }
+
+    .subtitle{
+        font-size: 20px;
+    }
+
+    .text{
+        font-size: 12px;
+    }
+
+    .circle-7{
+        top:-140vw
+    }
+
+    .img-logo-waos{
+        height: 30vh;
+    }
+    
+    .slider img{
+        height: 100%;
+        width: 100vw;
+        object-fit: cover;
+        filter: brightness(0.4);
+        transition: .5s ease;
     }
 }

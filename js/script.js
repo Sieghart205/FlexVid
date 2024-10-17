@@ -26,3 +26,14 @@ Juli.addEventListener("click",()=>{
     <h2>Sobre mi: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia, cumque aliquid delectus sapiente reprehenderit, nostrum laudantium beatae dolorem voluptatum atque ab impedit minus fuga repellendus porro maiores est quia similique.
 Odio qui, eum necessitatibus doloribus sequi ipsa optio consequatur repudiandae sed nihil, hic reiciendis, aut adipisci. Voluptatem rerum eius alias cum assumenda animi illo mollitia harum non possimus. At, officiis.</h2>`
 })
+
+const icon = document.getElementById("icon");
+const bg = document.getElementById("bg");
+
+icon.addEventListener("mouseenter",()=>{
+    bg.classList.add("bg-none")
+})
+
+icon.addEventListener("mouseleave",()=>{
+    bg.classList.remove("bg-none");
+})
