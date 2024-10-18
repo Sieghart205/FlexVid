@@ -93,7 +93,7 @@ body{
 
 header{
     width: 100%;
-    height: 100px;
+    height: 80px;
     padding: 30px;
     background-color: var(--primary);
     display: flex;
@@ -224,114 +224,69 @@ header nav{
     color: #fff;
 }
 
-.sec-4 .info{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    position: absolute;
-    height: 100vh;
+.sec-4{
     width: 100%;
-}
-
-.sec4 .info h3{
-    margin-bottom: 250px;
-}
-
-.sec-4 .info p{
-    width: 40%;
-    margin-top: 250px;
-}
-
-.circle{
-    border-radius: 100%;
-    transition: .5s ease;
-    cursor: crosshair;
-    overflow: hidden;
-    position: relative;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 80px;
+}
+
+.circle{
+    background-color: var(--dark);
+    border-radius: 100%;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    z-index: 500;
+}
+
+.circle::before{
+    content: "";
+    position: absolute;
+    background-color: var(--dark);
+    border-radius: 100%;
+    aspect-ratio: 1/1;
+    height: 400px;
+    z-index: 500;
 }
 
 .circle::after{
     content: "";
-    display: flex;
-    justify-self: center;
-    align-items: center;
     position: absolute;
-    background-color: var(--dark);
+    background-image: conic-gradient(var(--primary),var(--primary),transparent);
+    aspect-ratio: 1/1;
     border-radius: 100%;
-    width: 90%;
-    height: 90%;
+    height: 400px;
+    z-index: 450;
+    filter: blur(50px);
+    animation: 2s linear infinite rotar;
+}
+
+@keyframes rotar{
+    0%{
+        transform: rotate();
+    }
+    100%{
+        transform: rotate(-360deg);
+    }
 }
 
 
-.circle:hover{
-    scale: 1.1;
+
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
 }
 
-.circle-1{
-    background-color: var(--primary);
-    position: relative;
-    width: 20vw;
-    height: 20vw;
-    top:680px;
-    left: 25px;
-}
-
-.circle-2{
-    background-color: var(--acent);
-    position: relative;
-    width: 5vw;
-    height: 5vw;
-    top: 50px;
-    left: -50px;
-}
-
-.circle-3{
-    background-color: var(--acent);
-    position: relative;
-    width: 50px;
-    height: 50px;
-    top: 475px;
-    left: 27%;
-}
-
-.circle-4{
-    background-color: var(--primary);
-    position: relative;
-    width: 512px;
-    height: 512px;
-    top: -700px;
-    left: 87vw;
-}
-
-.circle-5{
-    background-color: var(--acent);
-    position: relative;
-    width: 150px;
-    height: 150px;
-    top: -20vh;
-    left: 96%;
-}
-
-.circle-6{
-    width: 75px;
-    height: 75px;
-    position: relative;
-    background-color: var(--acent);
-    top: -20%;
-    left: 80%;
-}
-
-.circle-7{
-    width: 300px;
-    height: 300px;
-    background-color: var(--secondary);
-    border-radius: 100%;
-    position: relative;
-    top: -65vw;
-    left: 10vw;
+.info .text{
+    width: 500px;
 }
 
 /* sobre nosotros */
