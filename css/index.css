@@ -1,5 +1,5 @@
 :root{
-    --primary: #42DBD3;
+    --primary: #5abeb9;
     --primary-2: #3b504f;
     --secondary: #42DB6B;
     --acent: #DB5B42;
@@ -18,10 +18,30 @@
 body{
     width: 100%;
     background-color: var(--dark);
+    cursor: none;
 }
 
 /* scrollbar */
 
+.cursor-outline{
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    border: 5px solid var(--acent);
+    z-index: 100000000;
+    pointer-events:none;
+}
+
+.cursor{
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: var(--acent);
+    z-index: 10000000;
+    pointer-events:none;
+}
 
 ::-webkit-scrollbar{
     background-color: #7a7a7a;
@@ -102,6 +122,10 @@ body{
     z-index: 999;
 }
 
+a{
+    cursor: crosshair;
+}
+
 header{
     width: 100%;
     height: 80px;
@@ -109,9 +133,13 @@ header{
     background-color: var(--primary);
     display: flex;
     align-items: center;
-    justify-content: right;
-    position: relative;
+    justify-content: space-between;
+    position: fixed;
     z-index: 99999;
+}
+
+header img{
+    height: 60px;
 }
 
 header nav{
@@ -167,7 +195,6 @@ header nav{
 
 .slider img:hover{
     width: 50vh;
-    cursor: crosshair;
     filter: brightness(0.7);
 }
 
@@ -236,6 +263,23 @@ header nav{
     align-items: center;
     gap: 150px;
     color: var(--white);
+    overflow: hidden;
+    transition: .2s ease;
+    position: relative;
+}
+
+.bg-s4{
+    width: 1920px;
+    height: 1920px;
+    border-radius: 100%;
+    background-image: radial-gradient(var(--primary),var(--secondary),var(--primary-2));
+    filter: blur(100px)
+            opacity(0.3);
+    z-index: 100;
+}
+
+#bg{
+    position: absolute;
 }
 
 .circle{
@@ -248,7 +292,6 @@ header nav{
     height: 400px;
     z-index: 500;
     transition: .2s ease;
-    cursor: crosshair;
 }
 
 .circle::before{
@@ -299,13 +342,12 @@ header nav{
     justify-content: center;
     align-items: center;
     gap: 25px;
+    z-index: 150;
 }
 
 .info .text{
     width: 500px;
 }
-
-/* sobre nosotros */
 
 /* formulario */
 
@@ -469,7 +511,6 @@ header nav{
     outline: none;
     padding: 9px 25px;
     background-color: #fff;
-    cursor: pointer;
     font-size: 0.9rem;
     border-radius: 4px;
     font-weight: 600;
@@ -517,7 +558,6 @@ header nav{
     transition: .5s color ease;
     overflow: hidden;
     z-index: 999;
-    cursor: crosshair;
 }
 
 .p-co::after{
@@ -587,7 +627,6 @@ header nav{
     object-fit: fill;
     transition: .2s ease;
     border-radius: 50% 0% 50% 0%;
-    cursor: crosshair;
 }
 
 .cont-p-img:hover .p-img{
@@ -611,6 +650,9 @@ header nav{
     overflow: hidden;
     position: relative;
     padding: 25px;
+    background-image: url("../img/bg-cont.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .slider-3d{
@@ -775,7 +817,6 @@ header nav{
     outline: none;
     padding: 9px 25px;
     background-color: #fff;
-    cursor: pointer;
     font-size: 0.9rem;
     border-radius: 4px;
     font-weight: 600;
@@ -805,10 +846,12 @@ a{
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;    
+    background-color: #00000073;
     flex-direction: column;
     gap: 100px;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
+    overflow: hidden;
 }
 
 .q-f img{
@@ -860,7 +903,7 @@ a{
     align-items: center;
     flex-direction: column;
     gap: 80px;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
 }
 
 .c{
@@ -881,6 +924,7 @@ a{
     background-color: var(--dark);
     border-radius: 100%;
     z-index: 300;
+    transition: .2s ease;
 }
 
 .c::before{
@@ -891,6 +935,16 @@ a{
     border-radius: 100%;
     filter: blur(10px);
     z-index: 250;
+    transition: .2s ease;
+}
+
+.c:hover::before{
+    filter: blur(30px);
+}
+
+.c:hover::after{
+    width: 0;
+    height: 0;
 }
 
 .c p{
@@ -908,6 +962,20 @@ a{
 
 .c3::before{
     background-color: var(--acent);
+}
+
+.info-c p{
+    transition: .2s ease;
+}
+
+.tc-1:hover{
+    color: var(--primary);
+}
+.tc-2:hover{
+    color: var(--secondary);
+}
+.tc-3:hover{
+    color: var(--acent);
 }
 
 .container-col{
@@ -977,11 +1045,10 @@ a{
 
 .info-f{
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 60px;
     padding: 60px;
 }
 
@@ -993,7 +1060,6 @@ a{
     align-items: center;
     position: relative;
     overflow: hidden;
-    cursor: crosshair;
 }
 
 
@@ -1050,12 +1116,12 @@ a{
     gap: 25px;
     background-color: var(--dark-2);
     position: absolute;
-    top: -750px;
+    top: -1100px;
     transition: .5s ease;
 }
 
 .target-f:hover .img-f .inf-f{
-    top: -50px;
+    top: -250px;
 }
 
 .target-f:hover .img-f .img-1{

@@ -15,11 +15,14 @@
     <title>FlexVid</title>
 </head>
 <body>
+    <div class="cursor-outline" id="outline"></div>
+    <div class="cursor" id="cursor"></div>
     <header>
+        <img src="img/icon.svg" alt="">
         <nav>
-            <a href="/" class="weight dark upper">Inicio</a>
-            <a href="sobre_nosotros.html" class="weight dark upper">Sobre Nosotros</a>
-            <a href="contacto.html" class="weight dark upper">Contacto</a>
+            <a href="/" class="weight blank upper">Inicio</a>
+            <a href="sobre_nosotros.html" class="weight blank upper">Sobre Nosotros</a>
+            <a href="contacto.html" class="weight blank upper">Contacto</a>
         </nav>
     </header>
     <section class="sec-1 sec" id="sec-1">
@@ -61,8 +64,24 @@
         <div class="info">
             <h3 class="weight subtitle upper">¿cual es nuestro objetivo?</h3>
             <p class="text">Concientizar al usuario de la plataforma los malos hábitos en su cotidianidad debido al exceso de los medios digitales, el impacto que este causa y cómo solucionarlo, reduciendo el consumo de los medios digitales mejorando su salud y bienestar.</p>
-            <a href="sobre_nosotros.html" class="weight text upper button">sobre nosotros</a>
         </div>
+        <div class="bg-s4" id="bg"></div>
     </section>
+    <script src="script/script.js"></script>
+    <script>
+window.addEventListener("mousemove",e=>{
+    let x = e.clientX
+    let y = e.clientY;
+
+    setTimeout(()=>{
+        outline.style.top = `${y - 50}px`
+        outline.style.left = `${x - 50}px`
+    },50)
+
+    cursor.style.top = `${y - 15}px`
+    cursor.style.left = `${x - 15}px`
+})
+
+    </script>
 </body>
 </html>
