@@ -990,6 +990,8 @@ a{
 .color{
     display: flex;
     gap: 80px;
+    justify-content: center;
+    align-items: center;
 }
 
 .color p{
@@ -1121,7 +1123,7 @@ a{
 }
 
 .target-f:hover .img-f .inf-f{
-    top: -250px;
+    top: calc(50% - 300px);
 }
 
 .target-f:hover .img-f .img-1{
